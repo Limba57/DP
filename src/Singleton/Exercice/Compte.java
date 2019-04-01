@@ -32,7 +32,7 @@ public class Compte {
             return false;
         }
         if (montant < plafond) {
-            logBanque.ecrireLog("retrait de "+montant);
+            logBanque.ecrireLog(" ** retrait de "+montant+" ** \n");
             this.solde -= montant;
             System.out.println("retrait de "+montant+" reste "+solde);
             return true;
@@ -49,7 +49,7 @@ public class Compte {
     public synchronized int Cdepot(int montant) {
 
         solde += montant;
-        logBanque.ecrireLog("depot de "+montant);
+        logBanque.ecrireLog(" ** depot de "+montant+" ** \n");
         System.out.println("vous venez de deposer "+montant+" €, votre solde s'éleve à "+solde+" €");
         notifyAll();
         return solde;
