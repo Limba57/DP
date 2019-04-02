@@ -5,13 +5,12 @@ public class Compte {
     private int numeroDeCompte;
     private int solde;
     private int plafond;
-    private LogBanque logBanque;
+
 
     public Compte( int solde, int plafond) {
         this.numeroDeCompte = aleatoire(10000,20000);
         this.solde = solde;
         this.plafond = plafond;
-        this.logBanque = LogBanque.getLogbanque();
     }
 
     public synchronized boolean Cretrait(int montant) {
@@ -32,7 +31,7 @@ public class Compte {
             return false;
         }
         if (montant < plafond) {
-            logBanque.ecrireLog(" ** retrait de "+montant+" ** \n");
+            LogBanque.getLogbanque().ecrireLog(" ** retrait de "+montant+" ** \n");
             this.solde -= montant;
             System.out.println("retrait de "+montant+" reste "+solde);
             return true;
@@ -49,7 +48,7 @@ public class Compte {
     public synchronized int Cdepot(int montant) {
 
         solde += montant;
-        logBanque.ecrireLog(" ** depot de "+montant+" ** \n");
+        LogBanque.getLogbanque().ecrireLog(" ** depot de "+montant+" ** \n");
         System.out.println("vous venez de deposer "+montant+" €, votre solde s'éleve à "+solde+" €");
         notifyAll();
         return solde;
@@ -68,7 +67,5 @@ public class Compte {
         return solde;
     }
 
-    public LogBanque getLogBanque() {
-        return logBanque;
-    }
+
 }

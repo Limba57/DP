@@ -42,7 +42,7 @@ public class Banque{
                 System.out.println("solde : "+this.client.getCompte().getSolde());
                 this.guichet();
             case 4:
-                System.out.println(client.getCompte().getLogBanque().afficherLog());
+                System.out.println(LogBanque.getLogbanque().afficherLog());
                 this.guichet();
             case 5:
                 break;

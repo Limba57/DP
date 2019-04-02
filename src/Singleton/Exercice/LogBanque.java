@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class LogBanque {
 
-    private static LogBanque logbanque = new LogBanque();
+    private final static LogBanque logbanque = new LogBanque();
     private File file;
 
-   private LogBanque() {
+    private LogBanque() {
        file = new File("historique.txt");
     }
 
