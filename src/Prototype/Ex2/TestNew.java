@@ -63,7 +63,7 @@ public class TestNew {
             System.out.println(l.getiDInstance());
         }
 
-        System.out.println((System.currentTimeMillis() - debut)/1000+" secondes");
+        System.out.println((System.currentTimeMillis() - debut)/1000000+" secondes");
 
 
 
