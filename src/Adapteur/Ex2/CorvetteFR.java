@@ -4,14 +4,15 @@ public class CorvetteFR implements Adaptateur {
 
     private Corvette corvette;
 
+    private String unite;
+
     public CorvetteFR(Corvette corvette) {
         this.corvette = corvette;
+        unite = "Km/h";
     }
 
     @Override
     public String jeRoule() {
-        this.corvette.unity = "Km/h";
-        this.corvette.speed *= 1.6;
-        return corvette.jeRoule();
+        return "Je suis " + corvette.name + " je roule à " + corvette.speed * 1.6 + " " + unite;
     }
 }
