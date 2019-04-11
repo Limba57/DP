@@ -13,5 +13,6 @@ public class client {
         contexte = new Contexte(new ConcreteStrategy2());
 
         contexte.action();
+
     }
 }
